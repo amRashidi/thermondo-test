@@ -1,0 +1,77 @@
+@import "./../variables";
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min  !=0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
+}
+
+@mixin sm {
+    @media (max-width: $bp-sm) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: calc($bp-sm + 1px)) {
+        @content;
+    }
+}
+
+@mixin make-col($size: false, $columns: $grid-columns) {
+    @if $size {
+        flex: 0 0 percentage(calc($size/$columns));
+        width: percentage(calc($size/$columns));
+    }
+
+    @else {
+        flex: 1 1 0;
+        max-width: 100%;
+    }
+}
+
+@mixin make-col-auto() {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+@mixin make-grid-columns($columns: 12, $gutter: 1.5rem, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            .col#{$infix} {
+                flex: 1 0 0%;
+            }
+
+            .col#{$infix}-auto {
+                @include make-col-auto();
+            }
+
+            @if $columns >0 {
+                @for $i from 1 through $columns {
+                    .col#{$infix}-#{$i} {
+                        @include make-col($i, $columns);
+                    }
+                }
+            }
+        }
+    }
+}

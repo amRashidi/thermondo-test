@@ -1,0 +1,51 @@
+.v-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: $spacing * 8;
+  padding: 0 $spacing * 4;
+  margin: $spacing;
+  font-size: 1.4rem;
+  line-height: normal;
+  color: var(--app-color-light);
+  text-transform: uppercase;
+  border-radius: $spacing;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    box-shadow: var(--app-shadow) 0px 2px 8px 1px;
+  }
+  &--primary {
+    background: var(--app-primary);
+  }
+  &--secondary {
+    background: var(--app-secondary);
+  }
+  &--outlined {
+    border: 1px solid var(--app-primary);
+  }
+  &--rounded {
+    border-radius: $spacing * 2;
+  }
+
+  &--disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: var(--app-disable);
+    &__content {
+      height: unset;
+    }
+  }
+  &--text {
+    color: var(--app-primary);
+    background-color: transparent;
+    &:hover {
+      box-shadow: none;
+      opacity: .75;
+    }
+  }
+
+  &--dark {
+    color: var(--app-color-light);
+  }
+}

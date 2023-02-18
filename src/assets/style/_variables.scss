@@ -1,0 +1,33 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  lg: 1280px,
+);
+@use "sass:map";
+$bp-sm: map.get($grid-breakpoints, "sm");
+$bp-lg: map.get($grid-breakpoints, "lg");
+
+$body-font: "Kumbh Sans";
+$app-header-height: 60px;
+$spacing: 5px;
+
+:root {
+  --app-bg: #f1f1f1;
+  --app-card--bg: #ffffff;
+  --app-color-dark: #1b1b1b;
+  --app-color-light: #ffffff;
+  --app-disable: #d1d1d1;
+  --border-color: #cccccc;
+  --app-primary: #283881;
+  --app-shadow: #dadada;
+}
+.app--dark {
+  --app-bg: #2b2b2b;
+  --app-card--bg: #282828;
+  --app-color-dark: #f5f5f5;
+  --app-color-light: #1b1b1b;
+  --app-disable: #d1d1d1;
+  --border-color: #cccccc;
+  --app-primary: #a4b4fc;
+  --app-shadow: #353535;
+}

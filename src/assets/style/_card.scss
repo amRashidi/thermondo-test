@@ -1,0 +1,49 @@
+.card {
+  margin-top: $spacing * 5;
+  border-radius: $spacing;
+  background-color: var(--app-card--bg);
+  box-shadow: var(--app-shadow) 0px 2px 8px 0px;
+  &__profile {
+    display: flex;
+    justify-content: center;
+    &__img {
+      margin-top: -$spacing * 5;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: var(--app-shadow) 0px 2px 8px 4px;
+    }
+  }
+  &__wrapper {
+    padding: $spacing * 3;
+    text-align: center;
+  }
+  &__title {
+    margin: $spacing * 2 auto $spacing * 3;
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 2rem;
+    span {
+      display: inline-block;
+      max-width: 70%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  &__actions {
+    margin: $spacing * 4 0;
+  }
+}

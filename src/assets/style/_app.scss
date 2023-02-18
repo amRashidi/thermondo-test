@@ -1,0 +1,65 @@
+.app {
+  width: 100%;
+  background-color: var(--app-bg);
+  padding-top: $spacing * 3;
+  color: var(--app-color-dark);
+  &__bulb {
+    position: fixed;
+    bottom: $spacing * 4;
+    left: $spacing;
+    width: fit-content;
+  }
+  &__header {
+    height: $app-header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing * 3;
+    border-radius: $spacing * 2;
+    background-color: var(--app-card--bg);
+    box-shadow: var(--app-shadow) 0px 2px 8px 0px;
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+  &--dark {
+    &-btn {
+      color: #f5b609 !important;
+    }
+  }
+
+  &__main {
+    padding: $spacing * 4 0;
+    background-color: var(--app-bg);
+  }
+
+  &--dark {
+    .app__logo,
+    .app__title {
+      color: var(--app-color-light);
+    }
+  }
+  &__title {
+    font-size: 5rem;
+    font-weight: 900;
+    text-align: center;
+    margin: $spacing * 6 0;
+    text-transform: uppercase;
+  }
+  &__skipLink {
+    white-space: nowrap;
+    margin: 1em auto;
+    top: 0;
+    position: fixed;
+    left: 50%;
+    margin-left: -72px;
+    opacity: 0;
+    color: var(--app-color-dark);
+    &:focus {
+      opacity: 1;
+      background-color: white;
+      padding: 0.5em;
+      border: 1px solid black;
+    }
+  }
+}
