@@ -1,9 +1,3 @@
-<div align="center">
-  <h1>Profile List</h1>
-</div>
-
-
-
 # Description
 Here is a sample project for managing profile list. 
 at first, a list of 20 items is loaded. Various buttons are placed to manage profile loads. The details of each user's information are displayed in modal.
