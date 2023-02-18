@@ -1,5 +1,5 @@
 <template>
-  <div :class="['app', { 'app--dark': isDark }]">
+  <div class="app">
     <div class="container">
       <AppHeader :title="`Profile List | ${items.length}`">
         <div>
@@ -56,7 +56,6 @@ const items: Ref<IProfileItem[]> = ref([]);
 const count = ref(0);
 const loading = ref(false);
 const modal = ref(false);
-const isDark = ref(false);
 
 const detailItem = ref({
   title: "",
